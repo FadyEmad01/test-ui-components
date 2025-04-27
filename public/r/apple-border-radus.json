@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "apple-border-radus",
+  "type": "registry:component",
+  "title": "Apple Border Radius",
+  "description": "A component with Apple border radius.",
+  "files": [
+    {
+      "path": "registry/new-york/blocks/apple-border-radus/page.tsx",
+      "content": "import React from 'react'\r\nimport Squircle from './components/Squircle'\r\n\r\nconst Squircles = () => {\r\n  return (\r\n    <div className='w-full h-full justify-center flex'>\r\n        <Squircle>\r\n            <img src=\"https://picsum.photos/300\" alt=\"\" />\r\n        </Squircle>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Squircles",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/new-york/blocks/apple-border-radus/hooks/useSquircle.ts",
+      "content": "'use client';\r\n\r\nimport { useEffect } from 'react';\r\n\r\n\r\nexport function useSquircle() {\r\n  useEffect(() => {\r\n    if (typeof window !== \"undefined\" && \"paintWorklet\" in CSS) {\r\n      // TypeScript-safe cast\r\n      (CSS as unknown as { paintWorklet: Worklet }).paintWorklet.addModule(\r\n        \"https://unpkg.com/css-houdini-squircle@0.3.0/lib/squircle.js\"\r\n      );\r\n    }\r\n  }, []);\r\n}\r\n",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/new-york/blocks/apple-border-radus/components/Squircle.tsx",
+      "content": "// components/Squircle.tsx\r\n\"use client\";\r\n\r\nimport { useSquircle } from \"../hooks/useSquircle\";\r\n\r\nexport default function Squircle({\r\n  children,\r\n}: Readonly<{\r\n  children: React.ReactNode;\r\n}>) {\r\n  useSquircle();\r\n\r\n  const squircleStyle: React.CSSProperties = {\r\n    maskImage: \"paint(squircle)\",\r\n    WebkitMaskImage: \"paint(squircle)\",\r\n    borderRadius: \"40px\", // required for squircle to show properly\r\n    // Use proper type for CSS properties (avoid 'any')\r\n    \"--squircle-radius\": \"40px\",\r\n    \"--squircle-smooth\": \"1\",\r\n    \"--squircle-outline\": \"none\",\r\n  } as React.CSSProperties;\r\n\r\n  return (\r\n    <div className=\"w-auto h-auto\" style={squircleStyle}>\r\n      {children}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ]
+}
