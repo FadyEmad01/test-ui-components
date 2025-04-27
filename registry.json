@@ -81,6 +81,7 @@
       "type": "registry:component",
       "title": "Apple Border Radius",
       "description": "A component with Apple border radius.",
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "registry/new-york/blocks/apple-border-radus/page.tsx",

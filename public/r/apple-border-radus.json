@@ -4,10 +4,13 @@
   "type": "registry:component",
   "title": "Apple Border Radius",
   "description": "A component with Apple border radius.",
+  "dependencies": [
+    "lucide-react"
+  ],
   "files": [
     {
       "path": "registry/new-york/blocks/apple-border-radus/page.tsx",
-      "content": "import React from 'react'\r\nimport Squircle from './components/Squircle'\r\n\r\nconst Squircles = () => {\r\n  return (\r\n    <div className='w-full h-full justify-center flex'>\r\n        <Squircle>\r\n            <img src=\"https://picsum.photos/300\" alt=\"\" />\r\n        </Squircle>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Squircles",
+      "content": "import React from 'react'\r\nimport Squircle from './components/Squircle'\r\nimport { Music4 } from 'lucide-react'\r\n\r\nconst Squircles = () => {\r\n  return (\r\n    <div className='w-full h-full justify-center flex'>\r\n        <Squircle>\r\n            <div className=\"aspect-square w-[200px] flex justify-center items-center bg-linear-to-t from-[#FA233B] to-[#FB5C74]\">\r\n            <Music4  className='w-[2100px] h-[100px] text-white'/>\r\n            </div>\r\n        </Squircle>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Squircles",
       "type": "registry:component"
     },
     {

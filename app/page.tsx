@@ -71,7 +71,7 @@ export default function Home() {
             <h2 className="text-sm text-muted-foreground sm:pl-3">
               asdsd
             </h2>
-            <OpenInV0Button name="example-with-css" className="w-fit" />
+            <OpenInV0Button name="apple-border-radus" className="w-fit" />
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">
             <Squircles />
