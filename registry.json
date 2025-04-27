@@ -84,8 +84,10 @@
       "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "registry/new-york/blocks/apple-border-radus/page.tsx",
-          "type": "registry:component"
+          "path": "registry/new-york/blocks/apple-border-radus/example-apple.tsx",
+          "type": "registry:component",
+          "target": "app/page.tsx"
+
         },
         {
           "path": "registry/new-york/blocks/apple-border-radus/hooks/useSquircle.ts",
